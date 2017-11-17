@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../javascripts/setupp2.js"></script>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+<script>
+    function getAce() {
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/java");
+
+        var editor2 = ace.edit("reflection");
+        editor2.setTheme("ace/theme/monokai");
+        editor2.getSession().setMode("ace/mode/java");
+    }
+</script>
+<body onload="getAce()">
+<h2><i>Coding Challenge</i><br /><button onclick="doContinuous()">Start</button></h2>
+<div id="header"class="header">Player2</div>
+<div id="mainPane">
+    <div id="left">
+        <h3>You</h3>
+        <div>
+            <div id="editor"></div>
+        </div>
+    </div>
+    <div id="right">
+        <h3>Opponent</h3>
+        <div>
+            <div id="reflection"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
