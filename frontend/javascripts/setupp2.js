@@ -14,7 +14,11 @@ function doSomething(){
         .done(function(data){
             var actualcode = data.xyz;
             console.log('POST response: ', JSON.stringify(actualcode));
-            editor2.setValue(JSON.stringify(actualcode));
+            var noquote = JSON.stringify(actualcode, "", 2);
+            var final = noquote.replace(/\"/g, "");
+            editor2.setValue(final);
+            editor2.find('\\n');
+            editor2.replaceAll('\n');
         })
         .fail(function(jqXHR, textStatus, err){
             conosle.log('AJAX error response: ', textStatus);

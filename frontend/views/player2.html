@@ -16,10 +16,12 @@
         var editor2 = ace.edit("reflection");
         editor2.setTheme("ace/theme/monokai");
         editor2.getSession().setMode("ace/mode/java");
+        editor2.setReadOnly(true);
     }
 </script>
 <body onload="getAce()">
-<h2><i>Coding Challenge</i><br /><button onclick="doContinuous()">Start</button></h2>
+<h1><i>Code Rash</i><br />
+    <button onclick="doContinuous()">Start</button></h1>
 <div id="header"class="header">Player2</div>
 <div id="mainPane">
     <div id="left">

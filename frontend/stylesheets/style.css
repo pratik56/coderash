@@ -8,6 +8,11 @@ a {
   color: #00B7FF;
 }
 
+h1 {
+  text-align: center;
+  color: whitesmoke;
+}
+
 h2 {
   text-align: center;
   color: whitesmoke;
@@ -60,5 +65,9 @@ button {
 
 .header {
   text-align: center;
+  color: whitesmoke;
+}
+
+.input-field{
   color: whitesmoke;
 }
