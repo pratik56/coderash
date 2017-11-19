@@ -8,11 +8,6 @@ a {
   color: #00B7FF;
 }
 
-h1 {
-  text-align: center;
-  color: whitesmoke;
-}
-
 h2 {
   text-align: center;
   color: whitesmoke;
@@ -21,17 +16,27 @@ h3 {
   text-align: center;
   color: whitesmoke;
 }
+h4 {
+  text-align: center;
+  color: whitesmoke;
+}
+h5 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+h6 {
+  text-align: center;
+  color: whitesmoke;
+}
 
 button {
   background-color: darkred;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
 }
 
@@ -40,7 +45,7 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 650px;
+  height: 600px;
   width: 600px;
 }
 
@@ -49,7 +54,7 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 650px;
+  height: 600px;
   width: 600px;
 }
 
@@ -57,10 +62,15 @@ button {
   display: flex;
 }
 #left {
-  flex: 0 0 65%;
+
 }
 #right {
-  flex: 1;
+
+}
+#bottom {
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
 }
 
 .header {
@@ -68,6 +78,25 @@ button {
   color: whitesmoke;
 }
 
-.input-field{
+#clock {
   color: whitesmoke;
+  text-align: center;
+}
+
+.waves-effect {
+  background-color: darkred;
+  color: whitesmoke;
+}
+
+#button1 {
+  text-align: center;
+}
+#button2 {
+  text-align: center;
+}
+#button3 {
+  text-align: center;
+}
+#button4 {
+  text-align: center;
 }

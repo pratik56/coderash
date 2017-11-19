@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="../javascripts/setupp1.js"></script>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/materialize.min.css"  media="screen,projection"/>
     <link rel='stylesheet' href='../stylesheets/style.css' />
 </head>
 <script>
@@ -20,21 +21,49 @@
     }
 </script>
 <body onload="getAce()">
-<h1><i>Code Rash</i><br />
-    <button onclick="doContinuous()">Start</button></h1>
-<div id="header"class="header">Player 1</div>
-<div id="mainPane">
-    <div id="left">
-        <h3>You</h3>
+<div class="row">
+    <div class="col s12 m4 l2">
+        <div id="button1" class="row">
+            <a class="waves-effect waves-light btn" onclick="doContinuous()">Start</a>
+        </div>
+        <div id="button2" class="row">
+            <a class="waves-effect waves-light btn">Submit</a>
+        </div>
+    </div>
+    <div class="col s12 m4 l8">
+        <h4><i>Code Rash</i></h4>
+        <h4><i>Player1</i></h4>
+        <div id="clock"><h5><i>Timer:</i></h5></div>
+    </div>
+    <div class="col s12 m4 l2">
+        <div id="button3" class="row">
+            <a class="waves-effect waves-light btn">Next</a>
+        </div>
+        <div id="button4" class="row">
+            <a class="waves-effect waves-light btn">Exit</a>
+        </div>
+    </div>
+</div>
+</div>
+<div id="mainPane" class="row">
+    <div id="left" class="col s12 m4 l12">
+        <h6>You</h6>
         <div>
             <div id="editor"></div>
         </div>
     </div>
-    <div id="right">
-        <h3>Opponent</h3>
+    <div id="right" class="col s12 m4 l12">
+        <h6>Opponent</h6>
         <div>
             <div id="reflection"></div>
         </div>
+    </div>
+</div>
+<div id="bottom" class= "row">
+    <div class="col s12 m6 l12">
+        Question 1:   <input type="text"  />
+        Question 2:   <input type="text"  />
+        Question 3:   <input type="text"  />
     </div>
 </div>
 </body>
