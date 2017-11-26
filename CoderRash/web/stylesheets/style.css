@@ -1,0 +1,103 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #272822;
+  color: whitesmoke;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h2 {
+  text-align: center;
+  color: whitesmoke;
+}
+h3 {
+  text-align: center;
+  color: whitesmoke;
+}
+h4 {
+  text-align: center;
+  color: whitesmoke;
+}
+h5 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+h6 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+button {
+  background-color: darkred;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#editor {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 600px;
+  width: 600px;
+}
+
+#reflection {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 600px;
+  width: 600px;
+}
+
+#mainPane {
+  display: flex;
+}
+#left {
+
+}
+#right {
+
+}
+#bottom {
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+}
+
+.header {
+  text-align: center;
+  color: whitesmoke;
+}
+
+#clock {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.waves-effect {
+  background-color: darkred;
+  color: whitesmoke;
+}
+
+#button1 {
+  text-align: center;
+}
+#button2 {
+  text-align: center;
+}
+#button3 {
+  text-align: center;
+}
+#button4 {
+  text-align: center;
+}
