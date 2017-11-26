@@ -18,10 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import royal.bean.Crbean;
 
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "logout", urlPatterns = {"/logout"})
 public class logout extends HttpServlet {
 

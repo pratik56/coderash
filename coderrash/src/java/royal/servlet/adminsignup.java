@@ -19,10 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import royal.database.*;
 
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "adminsignup", urlPatterns = {"/adminsignup"})
 public class adminsignup extends HttpServlet {
 

@@ -23,10 +23,6 @@ import javax.servlet.http.HttpSession;
 import royal.database.*;
 import royal.bean.*;
 
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "adminlogin", urlPatterns = {"/adminlogin"})
 public class adminlogin extends HttpServlet {
 

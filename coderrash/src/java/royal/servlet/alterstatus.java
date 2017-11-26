@@ -17,10 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import royal.database.databaseconn;
 
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "alterstatus", urlPatterns = {"/alterstatus"})
 public class alterstatus extends HttpServlet {
 

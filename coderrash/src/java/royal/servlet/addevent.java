@@ -23,10 +23,6 @@ import javax.websocket.Session;
 import royal.bean.*;
 import royal.database.databaseconn;
 
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "addevent", urlPatterns = {"/addevent"})
 public class addevent extends HttpServlet {
 

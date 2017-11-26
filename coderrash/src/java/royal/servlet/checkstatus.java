@@ -23,11 +23,6 @@ import javax.servlet.http.HttpSession;
 import royal.database.*;
 import royal.bean.*;
 
-
-/**
- *
- * @author Rohit Surana
- */
 @WebServlet(name = "checkstatus", urlPatterns = {"/checkstatus"})
 public class checkstatus extends HttpServlet {
 
