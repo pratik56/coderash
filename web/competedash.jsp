@@ -59,7 +59,7 @@
                
             </div>
             <div class="col s12 m4 l8">
-                <h4><img src="icons/Logo.png"</h4>
+                <h4><img src="<%=context%>icons/Logo.png"</h4>
                 <h4><i><%=serv_message%></i></h4>
                 <div id="clock"><h5><i>Timer:</i></h5></div>
             </div>
@@ -76,6 +76,7 @@
     <div id="mainPane" class="row">
         <div id="left" class="col s12 m4 l12">
             <h6>You</h6>
+            <p>Question:   <span id="cr_question"/></p>
             <div>
                 <div id="editor"></div>
             </div>
@@ -86,11 +87,6 @@
             <div>
                 <div id="reflection"></div>
             </div>
-        </div>
-    </div>
-    <div id="bottom" class= "row">
-        <div class="col s12 m6 l12">
-            Question:   <span id="cr_question"/>
         </div>
     </div>
             <form action="../crremovelive" method="POST" id="royal_coders_logout"/>

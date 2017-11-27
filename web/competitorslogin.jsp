@@ -4,9 +4,9 @@
 <head>
     <title>coderrash</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel='stylesheet' href='stylesheets/style.css' />
-    <link type="text/css" rel="stylesheet" href="stylesheets/materialize.min.css"  media="screen,projection"/>
-    <script type="text/javascript" src="javascripts/materialize.min.js"></script>
+    <link rel='stylesheet' href='<%=request.getContextPath()%>/stylesheets/style.css' />
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/stylesheets/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/javascripts/materialize.min.js"></script>
 </head>
 <body>
      <%
@@ -19,7 +19,7 @@
             if(compete_path == null)
                 compete_path = "";
      %>
-<h4><img src="icons/Logo.png"</h4>
+<h4><img src="<%=request.getContextPath()%>/icons/Logo.png"</h4>
 <div class="row">
     <form action="${pageContext.request.contextPath}/crashcompete<%=compete_path%>" method="POST" class="col s12">
         <div class="row">

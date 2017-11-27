@@ -29,7 +29,7 @@
             rd.forward(request, response);
         }
         %>
-<h2><i>Code Rash</i></h2>
+<h4><img src="icons/Logo.png"</h4>
 <h3>Admin</h3>
 <div class="row">
     <form action="addevent" method="POST" name="addevent" id="addevent" class="col s12">
@@ -62,8 +62,8 @@
             </div>
             <input id="eventhash" name="eventhash" type="hidden" value="">
         </div>
-        <div id="submit">
-            <button class="btn waves-effect waves-light" onclick="createevent()" name="action">Create Event</button>
+        <div id="button1">
+            <button class="btn red" onclick="createevent()" name="action">Create Event</button>
         </div>
     </form>
 </div>
