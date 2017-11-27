@@ -3,10 +3,10 @@
 <head>
     <title>Admin</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../javascripts/setupadmin.js"></script>
+    <script src="javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/setupadmin.js"></script>
     <link type="text/css" rel="stylesheet" href="stylesheets/materialize.min.css"  media="screen,projection"/>
-    <link rel='stylesheet' href='../stylesheets/style.css' />
+    <link rel='stylesheet' href='stylesheets/style.css' />
 <script>
     function getAce() {
         var editor = ace.edit("editor");
@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="col s12 m4 l8">
-        <h4><i>Code Rash</i></h4>
+        <h4><img src="icons/Logo.png"</h4>
         <h4><i>Admin</i></h4>
         <div id="clock"><h5><i>Timer:</i></h5></div>
     </div>

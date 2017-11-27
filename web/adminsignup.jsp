@@ -3,10 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AdminLogin</title>
+    <title>SignUp</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascripts/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="../javascripts/materialize.min.js"></script>
+    <script type="text/javascript" src="javascripts/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
 </head>
 <body>
     <%
@@ -17,7 +18,7 @@
           Session.invalidate();
         }
         %>
-<h2><i>Code Rash</i></h2>
+<h4><img src="icons/Logo.png"</h4>
 <h3>Admin</h3>
 <div class="row">
     <form id="signupform" action="adminsignup" method="POST" class="col s12">
@@ -47,8 +48,8 @@
                 <label for="email">Email</label>
             </div>
         </div>
-        <div id="submit">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+        <div id="button1">
+        <button class="btn red" type="submit" name="action">Submit</button>
         </div>
     </form>
 </div>

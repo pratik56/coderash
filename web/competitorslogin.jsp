@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel='stylesheet' href='stylesheets/style.css' />
     <link type="text/css" rel="stylesheet" href="stylesheets/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="javascripts/materialize.min.js"></script>
 </head>
 <body>
      <%
@@ -18,16 +19,17 @@
             if(compete_path == null)
                 compete_path = "";
      %>
-<h2><i>Code Rash</i></h2>
+<h4><img src="icons/Logo.png"</h4>
 <div class="row">
     <form action="${pageContext.request.contextPath}/crashcompete<%=compete_path%>" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
                 <input id="coder_name" name="coder_name" type="text" class="validate">
+                <label for="coder_name">Coder Name</label>
             </div>
         </div>
-        <div id="submit">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Compete</button>
+        <div id="button1">
+        <button class="btn red" type="submit" name="action">Compete</button>
         </div>
     </form>
     <div><%=serv_message%></div>

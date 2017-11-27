@@ -8,9 +8,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
     </head>
     <body>
+        <div class="row">
+            <h4><img src="icons/Logo.png"</h4>
+        </div>
         <% 
             if(request.getParameter("message") != null)
             {
@@ -19,7 +24,15 @@
         <%
             }
         %>
-        <a href="adminsignup.jsp">Sign up</a>
-        <a href="adminlogin.jsp">Sign in</a>
+        <div class="row">
+                <div id = "button3" class = "row">
+                    <a id="next" class = "btn red" href="adminsignup.jsp">SignUp</a>
+                </div>
+                <div id="button4" class="row">
+                    <a id="exit" class="btn red" href="adminlogin.jsp">SignIn</a>
+                </div>
+        </div>
+        
+        
     </body>
 </html>

@@ -59,7 +59,7 @@
                
             </div>
             <div class="col s12 m4 l8">
-                <h4><i>Code Rash</i></h4>
+                <h4><img src="icons/Logo.png"</h4>
                 <h4><i><%=serv_message%></i></h4>
                 <div id="clock"><h5><i>Timer:</i></h5></div>
             </div>

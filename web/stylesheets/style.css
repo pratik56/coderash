@@ -62,12 +62,7 @@ button {
 #mainPane {
   display: flex;
 }
-#left {
 
-}
-#right {
-
-}
 #bottom {
   bottom: 0;
   width: 100%;
@@ -86,6 +81,11 @@ button {
 
 .waves-effect {
   background-color: darkred;
+  color: whitesmoke;
+}
+
+.btn {
+    background-color: darkred;
   color: whitesmoke;
 }
 

@@ -53,7 +53,7 @@
     <body onload="getAce()">
         <div class="row">
             <div class="col s12 m4 l8">
-                <h4><i>Code Rash</i></h4>
+                <h4><img src="icons/Logo.png"</h4>
             </div>
         </div>
         <div id="mainPane" class="row">

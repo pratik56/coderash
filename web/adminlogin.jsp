@@ -5,9 +5,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
     </head>
     <body>
+        <h4><img src="icons/Logo.png"</h4>
         <%
         HttpSession Session = request.getSession(false);
         Crbean cr1 = (Crbean) Session.getAttribute("coderrashbean");
@@ -16,10 +21,22 @@
             Session.invalidate();
         }
         %>
+        <div class="row">
         <form id="adminloginform" method="POST" action="adminlogin">
-        Email:<input name="email" type="text" required ><br/>
-        Password:<input name="password" type="password" required><br/>
-        <button type="submit" >Log in</button>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="email" id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="password" id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <button class="btn red" type="submit" name="action">Submit</button>
     </form>
+        </div>
     </body>
 </html>
