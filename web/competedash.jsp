@@ -72,11 +72,11 @@
                 </div>
             </div>
         </div>
-    </div>
+                <div class="row">Question: <span id="cr_question"/></div>
     <div id="mainPane" class="row">
         <div id="left" class="col s12 m4 l12">
             <h6>You</h6>
-            <p>Question:   <span id="cr_question"/></p>
+            <p><span>&nbsp;&nbsp;</span></p>
             <div>
                 <div id="editor"></div>
             </div>

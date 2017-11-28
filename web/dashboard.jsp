@@ -20,7 +20,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
         <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/stylesheets/jquery-confirm.css">
-        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/stylesheets/style.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
         <script type="text/javascript" src="<%=request.getContextPath()%>/javascripts/dashboard.js"></script>
     </head>
@@ -56,8 +56,8 @@
         dc.process_select_Query();
         
     %> 
-    <div class="col s12 m4 l2">
-        <h4><%="welcome " + cb.getName()%></h4>
+    <div class="col s12 m4 l2" id="fore">
+        <h4><%="Home    " + cb.getName()%></h4>
     </div>
     <div class="col s12 m4 l8">
         <h4><img src="icons/Logo.png"</h4>
@@ -68,11 +68,14 @@
     </div>
     <div class="row">
         <div id="button1"><a id="eventbutton" href="event.jsp"><button class="btn red">Create new Event</button></a></div>
-   
-        <div id="button1"><p>List of all events</p>
+        <div id="fancy">List of all events</div>
+        </div>
+    <div class="row">
+        <div id="button3">
     <%    while (dc.rs.next()) {    %>
-        <button id="button1" class="btn red" value="<%=dc.rs.getString("UNIQUE_EVENT_ID")%>" onclick="eventdetails(<%= "\'" + dc.rs.getString("UNIQUE_EVENT_ID") + "\'"%>)"><%= dc.rs.getString("EVENT_NAME")%></button>
-        <%out.print("http://localhost:8080/coderrash/rashers/"+dc.rs.getString("UNIQUE_EVENT_ID"));%>
+        Event:  <button id="button2" class="btn" value="<%=dc.rs.getString("UNIQUE_EVENT_ID")%>" onclick="eventdetails(<%= "\'" + dc.rs.getString("UNIQUE_EVENT_ID") + "\'"%>)"><%= dc.rs.getString("EVENT_NAME")%></button>
+        <br />
+        Link:   <div class="chip"><%out.print("http://localhost:8080/coderrash/rashers/"+dc.rs.getString("UNIQUE_EVENT_ID"));%></div>
     <br/>
     <%   }  
 }
@@ -82,7 +85,7 @@ catch (Exception e)
             rd.forward(request, response);
 }
 %>
+        </div>
 </div>
-    </div>
 </body>
 </html>

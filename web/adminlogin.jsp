@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
     </head>
     <body>
+       
         <h4><img src="icons/Logo.png"</h4>
         <%
         HttpSession Session = request.getSession(false);
@@ -22,6 +23,9 @@
         }
         %>
         <div class="row">
+            <div class="col s12 m4 l3">
+    </div>
+            <div class="col s12 m4 l6" id="fore">
         <form id="adminloginform" method="POST" action="adminlogin">
         <div class="row">
             <div class="input-field col s12">
@@ -38,5 +42,11 @@
         <button class="btn red" type="submit" name="action">Submit</button>
     </form>
         </div>
+            <div class="col s12 m4 l3">
+    </div>
+        </div>
+      
+       
+        <footer class="footer">Booyah</footer>
     </body>
 </html>

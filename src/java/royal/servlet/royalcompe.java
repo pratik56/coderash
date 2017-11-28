@@ -82,7 +82,7 @@ public class royalcompe extends HttpServlet {
                         RequestDispatcher rd = request.getRequestDispatcher("/competedash.jsp?message=" + competitor_name + "&othercoder=" + other_coder + "&totaltime=" + totaltime);
                         rd.forward(request, response);
                     } else {
-                        response.sendRedirect("/coderrash/rashers/" + compete_path + "?message=" + URLEncoder.encode("Your event has not benn started by the host.", "UTF-8"));
+                        response.sendRedirect("/coderrash/rashers/" + compete_path + "?message=" + URLEncoder.encode("Your event has not been started by the host.", "UTF-8"));
                     }
 
                 } else {

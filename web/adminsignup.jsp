@@ -21,6 +21,9 @@
 <h4><img src="icons/Logo.png"</h4>
 <h3>Admin</h3>
 <div class="row">
+    <div class="col s12 m4 l3">
+    </div>
+    <div class="col s12 m4 l6" id="fore">
     <form id="signupform" action="adminsignup" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
@@ -31,7 +34,7 @@
                 <input name="last_name" id="last_name" type="text" class="validate">
                 <label for="last_name">Last Name</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <input name="company_name" id="company_name" type="text" class="validate">
                 <label for="company_name">Company Name</label>
             </div>
@@ -52,6 +55,10 @@
         <button class="btn red" type="submit" name="action">Submit</button>
         </div>
     </form>
+        </div>
+        <div class="col s12 m4 l3">
+    </div>
+    </div>
 </div>
 </body>
 </html>

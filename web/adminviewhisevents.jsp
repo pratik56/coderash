@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Player1</title>
+        <title>Admin</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <%
             response.setHeader("Cache-Control", "no-cache");
@@ -60,7 +60,7 @@
                 <div id = "button1" class = "row">
                     <button type="button" id="participant_one_database" class = "waves-effect waves-light btn" onclick = "calldatabase('participant_one_name');">View Submitted</button>
                 </div>
-                <div id = "button2" class = "row">
+                <div id = "button3" class = "row">
                     <button type="button" id="participant_one_live" class = "waves-effect waves-light btn" onclick = "calllive('participant_one_name');">View Live</button>
                 </div>
                 <p>
@@ -87,5 +87,6 @@
         <input type = "hidden" id = "unique_event_id" value = "<%=unique_event%>"/>
         <input type = "hidden" id = "participant_one_name" value = "<%=participant_one%>"/>
         <input type = "hidden" id = "participant_two_name" value = "<%=participant_two%>"/>
+        <footer class="footer">Booyah</footer>
     </body>
 </html>

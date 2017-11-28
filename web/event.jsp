@@ -39,8 +39,8 @@
                 <label for="event_name">Event Name</label>
             </div>
             <div class="input-field col s6">
-                <label for="time">Time</label><br />
                 <input name="time" id="Time" type="number" class="validate">
+                <label for="time">Time</label>
             </div>
         </div>
         <div class="row">
@@ -53,12 +53,18 @@
                 <label for="player2">Player 2</label>
             </div>
             <div>
-             <label for="question1">Question 1</label>
-                <input type="text" id="question1" name="question1" placeholder="">
-             <label for="question2">Question 2</label>
-                <input type="text" id="question1" name="question2" placeholder="">
-             <label for="question3">Question 3</label>
-                <input type="text" id="question3" name="question3" placeholder="">
+                <div class="input-field col s12">
+                <input type="text" id="question1" name="question1">
+                <label for="question1">Question 1</label>
+                </div>
+                <div class="input-field col s12">
+                <input type="text" id="question1" name="question2">
+                <label for="question2">Question 2</label>
+                </div>
+                <div class="input-field col s12">
+                <input type="text" id="question3" name="question3">
+                <label for="question3">Question 3</label>
+                </div>
             </div>
             <input id="eventhash" name="eventhash" type="hidden" value="">
         </div>
