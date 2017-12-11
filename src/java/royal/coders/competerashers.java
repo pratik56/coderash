@@ -48,8 +48,10 @@ public class competerashers extends HttpServlet {
                 response.setContentType("text/html;charset=UTF-8");
 
                 if (output != null && output.equals("1")) {
+                    
                     RequestDispatcher rd = request.getRequestDispatcher("/competitorslogin.jsp");
                     rd.include(request, response);
+
                 } else {
                     RequestDispatcher rd = request.getRequestDispatcher("/invalidurl.jsp?message=Invalid URL. Try- http://localhost:8080/coderrash/");
                     rd.forward(request, response);

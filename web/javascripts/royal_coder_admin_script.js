@@ -27,6 +27,27 @@ function calldatabase(participant) {
     });
 }
 
+function download(participant){
+    var participant_name = document.getElementById(participant).value;
+    var unique_event_id = document.getElementById('unique_event_id').value;
+    $.ajax({
+        type: 'post',
+        url: 'downloadcode',
+        data: {
+            participant_name: participant_name,
+            unique_event_id: unique_event_id,
+        },
+        success: function (response) {
+            response = response.replace(/\n/g, "<br />");
+            $.alert({
+                title: 'coderrash view: ' + participant_name,
+                content: response,
+                columnClass: 'medium',
+            });
+        }
+    });
+}
+
 
 
 function interval_on_one() {

@@ -63,6 +63,9 @@
                 <div id = "button3" class = "row">
                     <button type="button" id="participant_one_live" class = "waves-effect waves-light btn" onclick = "calllive('participant_one_name');">View Live</button>
                 </div>
+                <div id = "button1" class = "row">
+                    <button type="button" id="participant_one_download" class = "waves-effect waves-light btn" onclick = "download('participant_one_name');">Compile & Run</button>
+                </div>
                 <p>
                 Question number:&nbsp;&nbsp;<span id="participant_one_question"></span>
                 </p>
@@ -77,6 +80,9 @@
                 </div>
                 <div id = "button4" class = "row">
                     <button type="button" id="participant_two_live" class = "waves-effect waves-light btn" onclick = "calllive('participant_two_name');">View Live</button>
+                </div>
+                <div id = "button1" class = "row">
+                    <button type="button" id="participant_one_download" class = "waves-effect waves-light btn" onclick = "download('participant_two_name');">Compile & Run</button>
                 </div>
                 <p>Question number:&nbsp;&nbsp;<span id="participant_two_question"></span></p>
                 <div>

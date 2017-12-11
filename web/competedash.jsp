@@ -67,9 +67,6 @@
                 <div id = "button3" class = "row">
                     <button type="button" id="next" class = "waves-effect waves-light btn" onclick = "alert_user_submit();" disabled="true">Next</button>
                 </div>
-                <div id="button4" class="row">
-                    <button type="button" id="exit" class="waves-effect waves-light btn">Exit</button>
-                </div>
             </div>
         </div>
                 <div class="row">Question: <span id="cr_question"/></div>

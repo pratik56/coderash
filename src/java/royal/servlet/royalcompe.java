@@ -8,6 +8,7 @@ package royal.servlet;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -70,19 +71,47 @@ public class royalcompe extends HttpServlet {
 
                 response.setContentType("text/html;charset=UTF-8");
                 if (output != null && output.equals("1")) {
-                    if (event_status.equals("1")) {
-                        competecache comr = new competecache();
-                        competecoderscode ccc = new competecoderscode("nOt YeT sTaRtEd", compete_path, competitor_name, 0);
-                        comr.insert_Cache_codersrash(compete_path + competitor_name, ccc);
 
-                        HttpSession session = request.getSession(true);
-                        Crbean cr = new Crbean(competitor_name, compete_path, other_coder);
-                        session.setAttribute("coderrashbean", cr);
-                        session.setMaxInactiveInterval(900);
-                        RequestDispatcher rd = request.getRequestDispatcher("/competedash.jsp?message=" + competitor_name + "&othercoder=" + other_coder + "&totaltime=" + totaltime);
-                        rd.forward(request, response);
+                    d.set_sqlstatement("SELECT COUNT(1) as COUNT FROM CODERRASH.\"EVENT_CHECK_USER\" where \"UNIQUE_EVENT_ID\" = ? and \"PARTICIPANT\" = ?");
+                    Map<Integer, Object> param_check = new HashMap<>();
+                    param_check.put(1, compete_path);
+                    param_check.put(2, competitor_name);
+                    d.set_sqlparameters(param_check);
+                    d.process_select_Query();
+                    String count_check = null;
+                    if (d.rs.next()) {
+                        count_check = d.rs.getString("COUNT");
+                    }
+
+                    if (count_check != null && count_check.equals("0")) {
+
+                        if (event_status.equals("1")) {
+                            competecache comr = new competecache();
+                            competecoderscode ccc = new competecoderscode("nOt YeT sTaRtEd", compete_path, competitor_name, 0);
+                            comr.insert_Cache_codersrash(compete_path + competitor_name, ccc);
+
+                            HttpSession session = request.getSession(true);
+                            Crbean cr = new Crbean(competitor_name, compete_path, other_coder);
+                            session.setAttribute("coderrashbean", cr);
+                            session.setMaxInactiveInterval(900);
+                            
+                            Date date = new Date();
+                            d.set_sqlstatement("Insert into CODERRASH.\"EVENT_CHECK_USER\" (\"UNIQUE_EVENT_ID\",\"PARTICIPANT\",\"TIME_LOGGED_IN\") values (?, ?, ?)");
+                            Map<Integer, Object> param_insert = new HashMap<>();
+                            param_insert.put(1, compete_path);
+                            param_insert.put(2, competitor_name);
+                            param_insert.put(3, date);
+                            
+                            d.set_sqlparameters(param_insert);
+                            int return_rs = d.process_update_Query();
+                            
+                            RequestDispatcher rd = request.getRequestDispatcher("/competedash.jsp?message=" + competitor_name + "&othercoder=" + other_coder + "&totaltime=" + totaltime);
+                            rd.forward(request, response);
+                        } else {
+                            response.sendRedirect("/coderrash/rashers/" + compete_path + "?message=" + URLEncoder.encode("Your event has not been started by the host.", "UTF-8"));
+                        }
                     } else {
-                        response.sendRedirect("/coderrash/rashers/" + compete_path + "?message=" + URLEncoder.encode("Your event has not been started by the host.", "UTF-8"));
+                        response.sendRedirect("/coderrash/rashers/" + compete_path + "?message=" + URLEncoder.encode("Your URL is expired.", "UTF-8"));
                     }
 
                 } else {
