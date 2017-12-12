@@ -30,7 +30,7 @@ public class Appcontextlistner implements ServletContextListener {
         ctx.setAttribute("context_cache_cr", c);
 
         scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(new AutomateRefresh(), 0, 5, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(new AutomateRefresh(), 0, 15, TimeUnit.MINUTES);
     }
 
     @Override

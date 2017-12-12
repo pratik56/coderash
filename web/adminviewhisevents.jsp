@@ -60,7 +60,7 @@
                 <div id = "button1" class = "row">
                     <button type="button" id="participant_one_database" class = "waves-effect waves-light btn" onclick = "calldatabase('participant_one_name');">View Submitted</button>
                 </div>
-                <div id = "button3" class = "row">
+                <div id = "button1" class = "row">
                     <button type="button" id="participant_one_live" class = "waves-effect waves-light btn" onclick = "calllive('participant_one_name');">View Live</button>
                 </div>
                 <div id = "button1" class = "row">
@@ -75,10 +75,10 @@
             </div>
             <div id="right" class="col s12 m4 l12">
                 <h6><%=participant_two%></h6>
-                <div id = "button3" class = "row">
+                <div id = "button1" class = "row">
                     <button type="button" id="participant_two_database" class = "waves-effect waves-light btn" onclick = "calldatabase('participant_two_name');">View Submitted</button>
                 </div>
-                <div id = "button4" class = "row">
+                <div id = "button1" class = "row">
                     <button type="button" id="participant_two_live" class = "waves-effect waves-light btn" onclick = "calllive('participant_two_name');">View Live</button>
                 </div>
                 <div id = "button1" class = "row">
@@ -93,6 +93,5 @@
         <input type = "hidden" id = "unique_event_id" value = "<%=unique_event%>"/>
         <input type = "hidden" id = "participant_one_name" value = "<%=participant_one%>"/>
         <input type = "hidden" id = "participant_two_name" value = "<%=participant_two%>"/>
-        <footer class="footer">Booyah</footer>
     </body>
 </html>

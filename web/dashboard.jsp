@@ -26,8 +26,6 @@
     </head>
     <body>
         <div class="row">
-            
-   
         <%
         HttpSession Session = request.getSession(false);
         Crbean cr1 = (Crbean) Session.getAttribute("coderrashbean");
@@ -60,22 +58,21 @@
         <h4><%="Home    " + cb.getName()%></h4>
     </div>
     <div class="col s12 m4 l8">
-        <h4><img src="icons/Logo.png"</h4>
+        <h4><img src="icons/Logo.png"></h4>
     </div>
     <div class="col s12 m4 l2">
-        <a href="logout"><button class="btn red" id="logout">Logout</button></a>
+        <a href="logout"><button class="btn red buttonradius" id="logout">Logout</button></a>
         </div>
     </div>
     <div class="row">
-        <div id="button1"><a id="eventbutton" href="event.jsp"><button class="btn red">Create new Event</button></a></div>
-        <div id="fancy">List of all events</div>
+        <div id="button1"><a id="eventbutton" href="event.jsp"><button class="btn red buttonradius">Create new Event</button></a></div>
+        <div id="fancy"><b>List of all events</b></div>
         </div>
-    <div class="row">
-        <div id="button3">
+    <div class="row" id="button3">
+        <div>
     <%    while (dc.rs.next()) {    %>
-        Event:  <button id="button2" class="btn" value="<%=dc.rs.getString("UNIQUE_EVENT_ID")%>" onclick="eventdetails(<%= "\'" + dc.rs.getString("UNIQUE_EVENT_ID") + "\'"%>)"><%= dc.rs.getString("EVENT_NAME")%></button>
-        <br />
-        Link:   <div class="chip"><%out.print("http://localhost:8080/coderrash/rashers/"+dc.rs.getString("UNIQUE_EVENT_ID"));%></div>
+      <button id="button2" class="btn" value="<%=dc.rs.getString("UNIQUE_EVENT_ID")%>" onclick="eventdetails(<%= "\'" + dc.rs.getString("UNIQUE_EVENT_ID") + "\'"%>)"><%= dc.rs.getString("EVENT_NAME")%></button>
+      &nbsp; <div class="chip"><b><%out.print("http://localhost:8080/coderrash/rashers/"+dc.rs.getString("UNIQUE_EVENT_ID"));%></b></div>
     <br/>
     <%   }  
 }

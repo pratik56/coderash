@@ -20,34 +20,32 @@
         %>
 <h4><img src="icons/Logo.png"</h4>
 <h3>Admin</h3>
-<div class="row">
-    <div class="col s12 m4 l3">
-    </div>
-    <div class="col s12 m4 l6" id="fore">
+<div id="adminsignup" class="row">
+    <div >
     <form id="signupform" action="adminsignup" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input name="first_name" id="first_name" type="text" class="validate">
+                <input name="first_name" id="first_name" type="text" class="validate" required>
                 <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-                <input name="last_name" id="last_name" type="text" class="validate">
+                <input name="last_name" id="last_name" type="text" class="validate" required>
                 <label for="last_name">Last Name</label>
             </div>
             <div class="input-field col s12">
-                <input name="company_name" id="company_name" type="text" class="validate">
+                <input name="company_name" id="company_name" type="text" class="validate" required="">
                 <label for="company_name">Company Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="password" id="password" type="password" class="validate">
+                <input name="password" id="password" type="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="email" id="email" type="email" class="validate">
+                <input name="email" id="email" type="email" class="validate" required>
                 <label for="email">Email</label>
             </div>
         </div>
@@ -56,8 +54,6 @@
         </div>
     </form>
         </div>
-        <div class="col s12 m4 l3">
-    </div>
     </div>
 </div>
 </body>

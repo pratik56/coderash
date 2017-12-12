@@ -29,40 +29,40 @@
             rd.forward(request, response);
         }
         %>
-<h4><img src="icons/Logo.png"</h4>
-<h3>Admin</h3>
-<div class="row">
+        <h4><img src="icons/Logo.png"></h4>
+<h3>Host</h3>
+<div id="host" class="row">
     <form action="addevent" method="POST" name="addevent" id="addevent" class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input name="event_name" id="event_name" type="text" class="validate">
+                <input name="event_name" id="event_name" type="text" class="validate" required>
                 <label for="event_name">Event Name</label>
             </div>
             <div class="input-field col s6">
-                <input name="time" id="Time" type="number" class="validate">
+                <input name="time" id="Time" type="number" class="validate" required>
                 <label for="time">Time</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input name="player1" id="player1" type="text" class="validate">
+                <input name="player1" id="player1" type="text" class="validate" required>
                 <label for="player1">Player 1</label>
             </div>
             <div class="input-field col s6">
-                <input name="player2" id="player2" type="text" class="validate">
+                <input name="player2" id="player2" type="text" class="validate" required>
                 <label for="player2">Player 2</label>
             </div>
             <div>
                 <div class="input-field col s12">
-                <input type="text" id="question1" name="question1">
+                <input type="text" id="question1" name="question1" required>
                 <label for="question1">Question 1</label>
                 </div>
                 <div class="input-field col s12">
-                <input type="text" id="question1" name="question2">
+                <input type="text" id="question1" name="question2" required>
                 <label for="question2">Question 2</label>
                 </div>
                 <div class="input-field col s12">
-                <input type="text" id="question3" name="question3">
+                <input type="text" id="question3" name="question3" required>
                 <label for="question3">Question 3</label>
                 </div>
             </div>

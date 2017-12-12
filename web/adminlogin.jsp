@@ -12,8 +12,7 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/materialize.min.css">
     </head>
     <body>
-       
-        <h4><img src="icons/Logo.png"</h4>
+        <h4><img src="icons/Logo.png"></h4>
         <%
         HttpSession Session = request.getSession(false);
         Crbean cr1 = (Crbean) Session.getAttribute("coderrashbean");
@@ -22,31 +21,26 @@
             Session.invalidate();
         }
         %>
-        <div class="row">
-            <div class="col s12 m4 l3">
-    </div>
-            <div class="col s12 m4 l6" id="fore">
+        <div id="adminlogin" class="row">
+           
+            <div id="fore_1">
         <form id="adminloginform" method="POST" action="adminlogin">
         <div class="row">
             <div class="input-field col s12">
-                <input name="email" id="email" type="email" class="validate">
+                <input name="email" id="email" type="email" class="validate" required>
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="password" id="password" type="password" class="validate">
+                <input name="password" id="password" type="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
         <button class="btn red" type="submit" name="action">Submit</button>
     </form>
         </div>
-            <div class="col s12 m4 l3">
-    </div>
+           
         </div>
-      
-       
-        <footer class="footer">Booyah</footer>
     </body>
 </html>

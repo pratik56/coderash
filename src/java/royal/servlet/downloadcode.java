@@ -30,6 +30,8 @@ import java.lang.Runtime;
 @WebServlet(name = "downloadcode", urlPatterns = {"/downloadcode"})
 public class downloadcode extends HttpServlet {
 
+    boolean isWindows = System.getProperty("os.name")
+  .toLowerCase().startsWith("windows");
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -58,7 +60,7 @@ public class downloadcode extends HttpServlet {
                 while (d.rs.next()) {
                     output = output + "\n\n\n\n Question: " + d.rs.getString("QUESTION_NUMBER");
                     output = output + "\n\n Code: \n\n" + d.rs.getString("CODE");
-                    PrintWriter writer = new PrintWriter("/Users/Ashutosh/Desktop/TESTING/"+participant_name+"/code"+d.rs.getString("QUESTION_NUMBER")+".java", "UTF-8");
+                    PrintWriter writer = new PrintWriter("../tmp/"+participant_name+"/code"+d.rs.getString("QUESTION_NUMBER")+".java", "UTF-8");
                     writer.println(d.rs.getString("CODE"));
                     writer.close();
                     
@@ -86,9 +88,10 @@ public class downloadcode extends HttpServlet {
         
     }
 public String runcode(String participant_name) throws IOException{
+    if(!isWindows){
     Process p = null;
         ProcessBuilder pb = new ProcessBuilder("/bin/sh","runn.sh");
- pb.directory(new File("/Users/Ashutosh/Desktop/TESTING/"+participant_name));
+ pb.directory(new File("../tmp/"+participant_name));
         try {
             p = pb.start();
         } catch (IOException ex) {
@@ -104,6 +107,27 @@ public String runcode(String participant_name) throws IOException{
         System.out.println("### " + outp);
         String ret = outp +"";
         return ret;
+    }
+    else{
+        Process p = null;
+        ProcessBuilder pb = new ProcessBuilder("cmd.exe","runw.bat");
+ pb.directory(new File("../tmp/"+participant_name));
+        try {
+            p = pb.start();
+        } catch (IOException ex) {
+            Logger.getLogger(downloadcode.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        StringBuffer outp = new StringBuffer();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line="";
+        while ((line = reader.readLine())!= null) {
+                                outp.append(line + "\n");
+        }
+        System.out.println("### " + outp);
+        String ret = outp +"";
+        return ret;
+    }
         
 }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -146,9 +170,11 @@ public String runcode(String participant_name) throws IOException{
     }// </editor-fold>
 
     private String compile(String participant_name) throws IOException {
+        
+        if(!isWindows){
         Process p = null;
         ProcessBuilder pb = new ProcessBuilder("/bin/sh","compile.sh");
-        pb.directory(new File("/Users/Ashutosh/Desktop/TESTING/"+participant_name));
+        pb.directory(new File("../tmp/"+participant_name));
         try {
             p = pb.start();
         } catch (IOException ex) {
@@ -164,10 +190,32 @@ public String runcode(String participant_name) throws IOException{
         System.out.println("!!! " + outp);
         String ret = outp +"";
         return ret;
+        }
+        else{
+            Process p = null;
+        ProcessBuilder pb = new ProcessBuilder("cmd.exe","compilew.bat");
+        pb.directory(new File("../tmp/"+participant_name));
+        try {
+            p = pb.start();
+        } catch (IOException ex) {
+            Logger.getLogger(downloadcode.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        StringBuffer outp = new StringBuffer();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+        String line="";
+        while ((line = reader.readLine())!= null) {
+                                outp.append(line + "\n");
+        }
+        System.out.println("!!! " + outp);
+        String ret = outp +"";
+        return ret;
+        }
+        
     }
 
     private void createdir(String partname) throws IOException {
-        File dir = new File("/Users/Ashutosh/Desktop/TESTING/"+partname);
+        File dir = new File("../tmp");
         boolean success = dir.mkdir();
         if(success){
             System.out.println("Directory successfully created");
@@ -175,14 +223,33 @@ public String runcode(String participant_name) throws IOException{
         else{
             System.out.println("Directory not created");
         }
+        File dir1 = new File("../tmp/"+partname);
+        boolean success1 = dir1.mkdir();
+        if(success1){
+            System.out.println("Directory successfully created");
+        }
+        else{
+            System.out.println("Directory not created");
+        }
         
-        String cmd = "cp /Users/Ashutosh/Desktop/TESTING/runn.sh /Users/Ashutosh/Desktop/TESTING/"+partname;
+        if(!isWindows){
+        String cmd = "cp runn.sh ../tmp/"+partname;
         Runtime run = Runtime.getRuntime();
         run.exec(cmd);
         
-        String cmd1 = "cp /Users/Ashutosh/Desktop/TESTING/compile.sh /Users/Ashutosh/Desktop/TESTING/"+partname;
+        String cmd1 = "cp compile.sh ../tmp/"+partname;
         Runtime run1 = Runtime.getRuntime();
         run1.exec(cmd1);
+        }
+        else{
+            String cmd = "copy runw.bat ../tmp/"+partname;
+        Runtime run = Runtime.getRuntime();
+        run.exec(cmd);
+        
+        String cmd1 = "copy compilew.bat ../tmp/"+partname;
+        Runtime run1 = Runtime.getRuntime();
+        run1.exec(cmd1);
+        }
         
     }
 
